@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <table>
+        <tr>
+            <td><a href="index.html">Bài 1</a></td>
+            <td><a href="b10.2.html">Bài 2</a></td>
+            <td><a href="b10.3.html">Bài 3</a></td>
+            <td><a href="alert.html">Bài 4</a></td>
+            <td><a href="b10.5.html">Bài 5</a></td>
+            <td><a href="b10.6.html">Bài 6</a></td>
+            <td><a href="multi level.html">Bài 7</a></td>
+        </tr>
+    </table>
+    <div id="container">
+        <p id="p1">the first garagraph</p>
+        <p id="p2">the second garagraph</p>
+        <button onclick="changenode()">change node</button>
+        <script>
+            function changenode(){
+                var node=document.createElement('div');
+                node.innerText="The new one"
+                var x=document.getElementById('container');
+                var y=document.getElementById('p2');
+                x.replaceChild(node,y);
+            }
+        </script>
+    </div>
+    <button onclick="addnode()">add node</button>
+    <script>
+        function addnode(){
+            var x=document.createElement('p');
+            x.className="p3";
+            x.innerText="the new one";
+            var cha=document.getElementById('container');
+            var y=document.getElementById("p2");
+            cha.insertBefore(x,y);
+        }
+    </script>
+    <button onclick="removenode('p1')">remove node</button>
+    <script>
+        function removenode(x){
+            var elmnt=document.getElementById(x);
+            elmnt.remove();
+        }
+    </script>
+</body>
+</html>
